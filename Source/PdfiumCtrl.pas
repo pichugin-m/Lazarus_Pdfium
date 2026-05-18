@@ -685,6 +685,28 @@ begin
   end;
 end;
 
+procedure BeginScreenUpdate(hwnd: THandle);
+begin
+  try
+     SendMessage(hwnd, WM_SETREDRAW, 0, 0);
+  finally
+
+  end;
+end;
+
+procedure EndScreenUpdate(hwnd: THandle);
+begin
+  try
+    SendMessage(hwnd, WM_SETREDRAW, 1, 0);
+    {RedrawWindow(hwnd, nil, 0, DW_FRAME + RDW_INVALIDATE +
+      RDW_ALLCHILDREN + RDW_NOINTERNALPAINT);
+    if (erase) then
+      Windows.InvalidateRect(hwnd, nil, True); }
+  finally
+
+  end;
+end;
+
 procedure TPdfControl.DrawPage(DC: HDC; Page: TPdfPage; DirectDrawPage: Boolean);
 
   procedure Draw(DC: HDC; X, Y: Integer; Page: TPdfPage);
@@ -768,6 +790,8 @@ var
   DirectPageDraw: Boolean;
   WndR, ClipR: TRect;
 begin
+
+  //BeginScreenUpdate(Parent.Handle);
   DC := Canvas.Handle;
   {$IFDEF REPAINTTEST}
   FillRect(DC, ClientRect, GetStockObject(BLACK_BRUSH));
@@ -891,6 +915,7 @@ begin
     if Assigned(FOnPaint) then
       FOnPaint(Self);
   end;
+  //EndScreenUpdate(Parent.Handle);
 end;
 
 procedure TPdfControl.PageContentChanged(Closing: Boolean);

@@ -2617,7 +2617,7 @@ var
 // If |length| is less than the returned length, or |buffer| is NULL, |buffer|
 // will not be modified.
 var
-  FPDFFont_GetFontName: function(font: FPDF_FONT; buffer: PAnsiChar; length: LongWord): LongWord; {$IFDEF DLLEXPORT}stdcall{$ELSE}cdecl{$ENDIF};
+  FPDFFont_GetFamilyName: function(font: FPDF_FONT; buffer: PAnsiChar; length: LongWord): LongWord; {$IFDEF DLLEXPORT}stdcall{$ELSE}cdecl{$ENDIF};
 
 // Experimental API.
 // Get the decoded data from the |font| object.
@@ -8776,7 +8776,7 @@ const
     (P: @@FPDFTextObj_GetText;                          N: 'FPDFTextObj_GetText'),
     (P: @@FPDFTextObj_GetRenderedBitmap;                N: 'FPDFTextObj_GetRenderedBitmap'),
     (P: @@FPDFTextObj_GetFont;                          N: 'FPDFTextObj_GetFont'),
-    (P: @@FPDFFont_GetFontName;                         N: 'FPDFFont_GetFontName'),
+    (P: @@FPDFFont_GetFamilyName;                         N: 'FPDFFont_GetFamilyName'),
     (P: @@FPDFFont_GetFontData;                         N: 'FPDFFont_GetFontData'),
     (P: @@FPDFFont_GetIsEmbedded;                       N: 'FPDFFont_GetIsEmbedded'),
     (P: @@FPDFFont_GetFlags;                            N: 'FPDFFont_GetFlags'),
@@ -8814,7 +8814,7 @@ const
     (P: @@FPDFText_GetFontSize;                         N: 'FPDFText_GetFontSize'),
     (P: @@FPDFText_GetFontInfo;                         N: 'FPDFText_GetFontInfo'),
     (P: @@FPDFText_GetFontWeight;                       N: 'FPDFText_GetFontWeight'),
-    (P: @@FPDFText_GetTextRenderMode;                   N: 'FPDFText_GetTextRenderMode'),
+    (P: @@FPDFText_GetTextRenderMode;                   N: 'FPDFTextObj_GetTextRenderMode'),
     (P: @@FPDFText_GetFillColor;                        N: 'FPDFText_GetFillColor'),
     (P: @@FPDFText_GetStrokeColor;                      N: 'FPDFText_GetStrokeColor'),
     (P: @@FPDFText_GetCharAngle;                        N: 'FPDFText_GetCharAngle'),
