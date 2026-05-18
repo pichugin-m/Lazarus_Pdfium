@@ -6,7 +6,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants,
-  Classes, Graphics, Controls, Forms, Dialogs,
+  Classes, Graphics, Controls, Forms, Dialogs, LazUTF8,
   PdfiumCore, ExtCtrls, StdCtrls, PdfiumCtrl, Spin,ComCtrls, PrintersDlgs;
 
 type
@@ -85,7 +85,7 @@ begin
   if FileExists(ParamStr(1)) then
     FCtrl.LoadFromFile(ParamStr(1))
   else if OpenDialog1.Execute then
-    FCtrl.LoadFromFile(OpenDialog1.FileName)
+    FCtrl.LoadFromFile(UTF8ToWinCP(OpenDialog1.FileName))
   else
   begin
     Application.ShowMainForm := False;
