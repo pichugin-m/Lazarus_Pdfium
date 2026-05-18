@@ -3,11 +3,11 @@ Example of a PDF VCL Control using PDFium
 
 ## Requirements
 pdfium.dll (x86/x64) from the [pdfium-binaries](https://github.com/bblanchon/pdfium-binaries)
-Binary release: [chromium/5868](https://github.com/bblanchon/pdfium-binaries/releases/tag/chromium%2F5868)
+Binary release: [chromium/7834](https://github.com/bblanchon/pdfium-binaries/releases/tag/chromium/7834)
 
 ## Features
-This is a FreePascal port for PdfiumLib (Updated to chromium/5052) from                                https://github.com/ahausladen/PdfiumLib
-Works with Lazarus(ver2.2.2)/Freepascal(version 3.2.2) both 32 ad 64 bit.
+This is a FreePascal port for PdfiumLib (build 7834) from https://github.com/ahausladen/PdfiumLib
+Works with Lazarus(ver 4.6)/Freepascal(version 3.2.2) both 32 ad 64 bit.
 
 The library/components works on some of my personal project (mainly to render pdf file).
 
@@ -23,7 +23,6 @@ Note the component will not work with pdfium.dll dated on or before 2/3/2017 due
 A pdflib.dpk file (and also Tpdfcontrol.lrs) is also included for those who wish to place the TPdfControl to the component palette in Lazarus. Before installing the dpk, please remember to uncomment the line containing {$DEFINE VCL_PALETTE} in pdfiumctrl.pas. You may also need to delete the files in project\lib\ folder to ensure a clean start.
 
 The Example1 (PdfiumLibExample) is also originated from Andreas Hausladen's site, with some minor modification for Lazarus.
-
 
 
 All the codes are distributed/released under MPL-2.0 license.	
